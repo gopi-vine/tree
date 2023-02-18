@@ -1,8 +1,9 @@
 import axios from "axios";
+import ROUTES from "./routes.json"
 
 export const getTreeData = () => {
     return new Promise((resolve, reject) => {
-        axios.get('data.json')
+        axios.get(ROUTES.TREE_DATA)
         .then(res => {
             resolve(res.data);
         })

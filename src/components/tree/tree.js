@@ -9,14 +9,7 @@ const Tree = () => {
 
     const [data, setData] = useState([])
     
-    /*
-    on component render call the fetchTreeData function
-    */
-    useEffect(()=>{
-        fetchTreeData()
-    },[])
-    
-    /*
+        /*
     call API and set the response data in state 
     */
     const fetchTreeData = useCallback(async () =>{
@@ -26,7 +19,16 @@ const Tree = () => {
         }catch(error) {
             // handle error
         }
-    })
+    },[])
+    
+    /*
+    on component render call the fetchTreeData function
+    */
+    useEffect(()=>{
+        fetchTreeData()
+    },[fetchTreeData])
+    
+
 
     /*
         1.Render TreeItem
