@@ -1,4 +1,3 @@
-import './App.css';
 import Tree from './components/tree/tree';
 
 function App() {
